@@ -1,0 +1,86 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: Arial, sans-serif;
+  color: white;
+  background:
+    radial-gradient(circle at top left, #ff75b5, transparent 35%),
+    radial-gradient(circle at bottom right, #35c7ff, transparent 35%),
+    #16162c;
+}
+
+.phone {
+  width: min(390px, 100%);
+  min-height: 760px;
+  position: relative;
+  overflow: hidden;
+  padding: 22px;
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: 32px;
+  background: rgba(255,255,255,.12);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 20px 50px #0008;
+}
+
+header, .panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  border: 0;
+  color: white;
+  cursor: pointer;
+  background: transparent;
+  font-size: 22px;
+}
+
+.home { margin-top: 60px; }
+
+.apps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 42px;
+}
+
+.app, .notification {
+  padding: 18px 8px;
+  border: 1px solid rgba(255,255,255,.28);
+  border-radius: 20px;
+  background: rgba(255,255,255,.16);
+  backdrop-filter: blur(12px);
+}
+
+.app {
+  display: grid;
+  gap: 8px;
+  font-size: 31px;
+}
+
+small { font-size: 12px; }
+
+.notification-panel {
+  position: absolute;
+  inset: 0;
+  padding: 22px;
+  transform: translateY(-105%);
+  transition: transform .35s ease;
+  background: rgba(20,20,45,.55);
+  backdrop-filter: blur(22px);
+}
+
+.notification-panel.show { transform: translateY(0); }
+
+.notification {
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.notification p { margin-bottom: 0; }
